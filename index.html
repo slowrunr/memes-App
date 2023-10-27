@@ -21,57 +21,30 @@
         <h1>Настройки:</h1>
         <form name="memes__config" method="post">
           <section>
-            <div
-              class="option__wrapper"
-              style="float: left; margin-right: 20px"
-            >
+            <div class="option__wrapper">
               <label for="mem__select">Мем</label>
-              <input id="mem__select" type="text" value="One does not simply" />
+              <input
+                id="mem__select"
+                type="text"
+                placeholder="One does not simply"
+              />
             </div>
 
-            <div style="float: left">
+            <div class="option__wrapper">
               <label for="text__Input">Текст сверху</label>
-              <input id="text__Input" type="text" value="Нельзя просто так" />
+              <input
+                id="text__Input"
+                type="text"
+                placeholder="Нельзя просто так"
+              />
             </div>
 
-            <div style="float: left">
+            <div class="option__wrapper">
               <label for="text__Input">Текст снизу</label>
-              <input id="text__Input" type="text" value="Нельзя просто так" />
+              <input id="text__Input" type="text" placeholder="Взять и..." />
             </div>
           </section>
         </form>
-        <div id="dropdownMenu" class="dropdown">
-          <label class="text__above">
-            Мем
-            <input
-              autocomplete="off"
-              type="text"
-              id="imgSelector"
-              class="img__input"
-              placeholder="One does not simply"
-              readonly
-            />
-            <ul class="categories"></ul>
-          </label>
-        </div>
-
-        <label class="text__above">
-          <textarea
-            id="textInput"
-            class="text__input"
-            type="text"
-            placeholder="Нельзя просто так"
-          ></textarea>
-        </label>
-        <label class="text__above"
-          >Текст снизу
-          <textarea
-            id="textInput"
-            class="text__input"
-            type="text"
-            placeholder="Взять и..."
-          ></textarea>
-        </label>
 
         <!-- <button id="postBtn" class="post__btn">Опубликовать</button> -->
         <!-- <p id="textLengthCounter" class="symbols__counter">0/200</p> -->

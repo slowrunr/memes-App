@@ -7,10 +7,10 @@ body {
 
 .container {
   margin: auto;
-  padding: 102px;
-  width: 1150px;
+  padding-top: 105px;
+  width: 1183px;
   display: flex;
-  gap: 100px;
+  gap: 222px;
 }
 
 h1,
@@ -23,8 +23,32 @@ h2 {
   text-align: left;
 }
 
-.text__above {
-  display: flex;
+.option__wrapper {
+  margin-bottom: 42px;
+}
+
+input {
+  padding: 12px 21px;
+  width: 100%;
+  height: 54px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 1);
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+}
+
+input::placeholder {
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+}
+
+label {
   margin-bottom: 13px;
   font-size: 35px;
   font-weight: 400;
@@ -33,10 +57,19 @@ h2 {
   text-align: left;
 }
 
-.input-data,
-.output-data,
-.post {
-  width: 500px;
+.input-data {
+  width: 393px;
+}
+
+.output-data {
+  width: 568px;
+}
+
+.output__img {
+  width: 568px;
+  height: 335px;
+  border-radius: 15px;
+  border: 1px solid #000;
 }
 
 .output__title {
