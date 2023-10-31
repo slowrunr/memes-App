@@ -13,5 +13,7 @@ export class Controller {
 
   init() {
     console.log("app start");
+    const preview = this.model.getPreview();
+    this.view.render(preview);
   }
 }
