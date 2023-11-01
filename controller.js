@@ -13,7 +13,17 @@ export class Controller {
 
   init() {
     console.log("app start");
+    const memes = this.api.getMemes();
+
+    this.model.setMemes(memes);
+
+    this.view.renderMemesSelect(
+      this.model.getMemes(),
+      this.model.getCurrentMemeId()
+    );
+
     const preview = this.model.getPreview();
-    this.view.render(preview);
+
+    this.view.renderPreview(preview);
   }
 }

@@ -1,5 +1,5 @@
 import { Controller } from "./controller.js";
 
-const App = new Controller();
+const app = new Controller();
 
-App.init();
+app.init();

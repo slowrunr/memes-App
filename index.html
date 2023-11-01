@@ -22,33 +22,24 @@
         <form name="memes__config" method="post">
           <section>
             <div class="option__wrapper">
-              <label for="mem__select">Мем</label>
-              <input
-                id="mem__select"
-                type="text"
-                placeholder="One does not simply"
-              />
+              <label for="memesSelect">Мем</label>
+              <select class="memes-select" id="memesSelect">
+                <!-- <option value="value1">Значение 1</option>
+                <option value="value2" selected>Значение 2</option> -->
+              </select>
             </div>
 
             <div class="option__wrapper">
-              <label for="text__Input">Текст сверху</label>
-              <input
-                id="text__Input"
-                type="text"
-                placeholder="Нельзя просто так"
-              />
+              <label for="textTop">Текст сверху</label>
+              <input id="textTop" type="text" placeholder="Нельзя просто так" />
             </div>
 
             <div class="option__wrapper">
-              <label for="text__Input">Текст снизу</label>
-              <input id="text__Input" type="text" placeholder="Взять и..." />
+              <label for="textBottom">Текст снизу</label>
+              <input id="textBottom" type="text" placeholder="Взять и..." />
             </div>
           </section>
         </form>
-
-        <!-- <button id="postBtn" class="post__btn">Опубликовать</button> -->
-        <!-- <p id="textLengthCounter" class="symbols__counter">0/200</p> -->
-        <p id="warningMessage" class="warning__message"></p>
       </div>
       <div class="output-data">
         <h2 class="output__title">Превью:</h2>
