@@ -3,8 +3,7 @@ export class View {
     this.previewTextTopNode = document.getElementById("textTop");
     this.previewTextBottomNode = document.getElementById("textBottom");
     this.previewBaseImageNode = document.getElementById("baseImage");
-
-    this.memesSelectNode = document.getElementById("memesSelect");
+    this.memesSelectNode = document.querySelector(".memes-select");
   }
 
   renderPreview(preview) {
