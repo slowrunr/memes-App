@@ -13,8 +13,8 @@ export class Controller {
 
   init() {
     console.log("app start");
-    const memes = this.api.getMemes();
 
+    const memes = this.api.getMemes();
     this.model.setMemes(memes);
 
     this.view.renderMemesSelect(
