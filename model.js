@@ -20,6 +20,10 @@ export class Model {
     this.currentMemeId = memes[0].id;
   }
 
+  setCurrentMemeId(currentMemeId) {
+    this.currentMemeId = currentMemeId;
+  }
+
   getCurrentMemeId() {
     return this.currentMemeId;
   }

@@ -27,7 +27,6 @@ h2 {
   margin-bottom: 42px;
 }
 
-.memes-select,
 input {
   padding: 12px 21px;
   width: 100%;
@@ -49,6 +48,7 @@ input::placeholder {
   color: rgba(0, 0, 0, 1);
 }
 
+.memes-select,
 label {
   margin-bottom: 13px;
   font-size: 35px;

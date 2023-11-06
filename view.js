@@ -3,7 +3,7 @@ export class View {
     this.previewTextTopNode = document.getElementById("textTop");
     this.previewTextBottomNode = document.getElementById("textBottom");
     this.previewBaseImageNode = document.getElementById("baseImage");
-    this.memesSelectNode = document.querySelector(".memes-select");
+    this.memesSelectNode = document.getElementById("memesSelect");
   }
 
   renderPreview(preview) {
@@ -15,7 +15,6 @@ export class View {
   }
 
   renderMemesSelect(memes, currentMemeId) {
-    memes = [];
     memes.forEach((meme) => {
       const { id, name } = meme;
 
@@ -23,8 +22,10 @@ export class View {
 
       optionNode.setAttribute("value", id);
       optionNode.innerText = name;
-      optionNode.setAttribute("selected", id === currentMemeId);
 
+      if (id === currentMemeId) {
+        optionNode.setAttribute("selected", true);
+      }
       this.memesSelectNode.appendChild(optionNode);
     });
   }

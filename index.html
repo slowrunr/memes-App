@@ -19,27 +19,18 @@
     <div class="container">
       <div class="input-data">
         <h1>Настройки:</h1>
-        <form name="memes__config" method="post">
-          <section>
-            <div class="option__wrapper">
-              <label for="memesSelect">Мем</label>
-              <select class="memes-select" id="memesSelect">
-                <!-- <option value="value1">Значение 1</option>
-                <option value="value2" selected>Значение 2</option> -->
-              </select>
-            </div>
-
-            <div class="option__wrapper">
-              <label for="textTop">Текст сверху</label>
-              <input id="textTop" type="text" placeholder="Нельзя просто так" />
-            </div>
-
-            <div class="option__wrapper">
-              <label for="textBottom">Текст снизу</label>
-              <input id="textBottom" type="text" placeholder="Взять и..." />
-            </div>
-          </section>
-        </form>
+        <div class="option__wrapper">
+          <p>Мем</p>
+          <select id="memesSelect" class="memes-select"></select>
+        </div>
+        <div class="option__wrapper">
+          <label for="textTop">Текст сверху</label>
+          <input id="textTop" type="text" placeholder="Нельзя просто так" />
+        </div>
+        <div class="option__wrapper">
+          <label for="textBottom">Текст снизу</label>
+          <input id="textBottom" type="text" placeholder="Взять и..." />
+        </div>
       </div>
       <div class="output-data">
         <h2 class="output__title">Превью:</h2>

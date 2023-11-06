@@ -16,6 +16,7 @@ export class Controller {
 
     const memes = this.api.getMemes();
     this.model.setMemes(memes);
+    this.model.setCurrentMemeId(memes[0].id);
 
     this.view.renderMemesSelect(
       this.model.getMemes(),
