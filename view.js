@@ -1,9 +1,12 @@
 export class View {
-  constructor() {
+  constructor({ onMemeChange }) {
     this.previewTextTopNode = document.getElementById("textTop");
     this.previewTextBottomNode = document.getElementById("textBottom");
     this.previewBaseImageNode = document.getElementById("baseImage");
     this.memesSelectNode = document.getElementById("memesSelect");
+    this.onMemeChange = onMemeChange;
+
+    this.memesSelectNode.addEventListener("change", this._handleSelectChange);
   }
 
   renderPreview(preview) {
@@ -29,4 +32,11 @@ export class View {
       this.memesSelectNode.appendChild(optionNode);
     });
   }
+
+  _handleSelectChange = () => {
+    const id = this.memesSelectNode.value;
+
+    // console.log(this.memesSelectNode.value);
+    this.onMemeChange(id);
+  };
 }

@@ -1,14 +1,17 @@
 const PREVIEW_MOCK = {
-  url: "https://i.imgflip.com/30b1gx.jpg",
+  // url: "",
   textTop: "text above",
   textBottom: "text under",
 };
 
 export class Model {
-  constructor() {
+  constructor({ onCurrentMemeIdChange, onMemeschange }) {
     this.memes = [];
     this.currentMemeId = null;
     this.preview = PREVIEW_MOCK;
+
+    this.onCurrentMemeIdChange = onCurrentMemeIdChange;
+    this.onMemeschange = onMemeschange;
   }
 
   getMemes() {
@@ -17,11 +20,13 @@ export class Model {
 
   setMemes(memes) {
     this.memes = memes;
-    this.currentMemeId = memes[0].id;
+    // this.currentMemeId = memes[0].id;
+    this.onMemeschange(this.memes);
   }
 
   setCurrentMemeId(currentMemeId) {
     this.currentMemeId = currentMemeId;
+    this.onCurrentMemeIdChange();
   }
 
   getCurrentMemeId() {
@@ -30,5 +35,20 @@ export class Model {
 
   getPreview() {
     return this.preview;
+  }
+
+  getCurrentMeme() {
+    let currentMeme = null;
+
+    this.memes.forEach((meme) => {
+      console.log(meme);
+      console.log(this.getCurrentMemeId());
+      if (meme.id === this.getCurrentMemeId()) {
+        currentMeme = meme;
+      }
+    });
+
+    return currentMeme;
+    // return this.memes[this.getCurrentMemeId];
   }
 }
