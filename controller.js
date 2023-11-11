@@ -7,36 +7,21 @@ import { API } from "./api.js";
 export class Controller {
   constructor() {
     this.model = new Model({
+      onMemesChange: this.handleModelMemesChange,
       onCurrentMemeIdChange: this.handleModelCurrentMemeIdChange,
     });
     this.view = new View({ onMemeChange: this.handleViewMemeChange });
+
     this.api = new API();
   }
 
   init() {
-    //
-    console.log("app start");
-    //
     const memes = this.api.getMemes();
-    //
-    this.model.setCurrentMemeId(memes[0].id);
-    //
+
     this.model.setMemes(memes);
 
-    // this.view.renderMemesSelect(
-    //   this.model.getMemes(),
-    //   this.model.getCurrentMemeId()
-    // );
-
-    // const preview = this.model.getPreview();
-
+    const preview = this.model.getPreview();
     // this.view.renderPreview(preview);
-  }
-
-  handleViewMemeChange(id) {
-    // console.log(id);
-
-    this.model.setCurrentMemeId(id);
   }
 
   handleModelMemesChange = () => {
@@ -46,9 +31,11 @@ export class Controller {
     );
   };
 
-  handleModelCurrentMemeIdChange = () => {
-    console.log(this.model);
+  handleViewMemeChange(id) {
+    this.model.setCurrentMemeId(id);
+  }
 
+  handleModelCurrentMemeIdChange = () => {
     const preview = {
       ...this.model.getPreview(),
       url: this.model.getCurrentMeme().url,

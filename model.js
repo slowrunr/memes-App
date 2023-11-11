@@ -1,17 +1,16 @@
 const PREVIEW_MOCK = {
-  // url: "",
   textTop: "text above",
   textBottom: "text under",
 };
 
 export class Model {
-  constructor({ onCurrentMemeIdChange, onMemeschange }) {
+  constructor({ onCurrentMemeIdChange, onMemesChange }) {
     this.memes = [];
-    this.currentMemeId = null;
     this.preview = PREVIEW_MOCK;
+    this.currentMemeId = null;
 
+    this.onMemesChange = onMemesChange;
     this.onCurrentMemeIdChange = onCurrentMemeIdChange;
-    this.onMemeschange = onMemeschange;
   }
 
   getMemes() {
@@ -20,12 +19,15 @@ export class Model {
 
   setMemes(memes) {
     this.memes = memes;
-    // this.currentMemeId = memes[0].id;
-    this.onMemeschange(this.memes);
+    this.currentMemeId = memes[0].id;
+
+    this.onMemesChange();
+    this.onCurrentMemeIdChange();
   }
 
   setCurrentMemeId(currentMemeId) {
     this.currentMemeId = currentMemeId;
+
     this.onCurrentMemeIdChange();
   }
 
@@ -41,7 +43,6 @@ export class Model {
     let currentMeme = null;
 
     this.memes.forEach((meme) => {
-      console.log(meme);
       console.log(this.getCurrentMemeId());
       if (meme.id === this.getCurrentMemeId()) {
         currentMeme = meme;

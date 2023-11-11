@@ -22,6 +22,7 @@ export class API {
   }
 
   getMemes() {
+    console.log(MEMES_MOCK);
     return MEMES_MOCK;
   }
 }
