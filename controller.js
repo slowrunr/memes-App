@@ -20,7 +20,14 @@ export class Controller {
 
     this.model.setMemes(memes);
 
-    const preview = this.model.getPreview();
+    this.model.setCurrentMemeId(memes[0].id);
+
+    // this.view.renderMemesSelect(
+    //   this.model.getMemes(),
+    //   this.model.getCurrentMemeId()
+    // );
+
+    // const preview = this.model.getPreview();
     // this.view.renderPreview(preview);
   }
 
@@ -31,9 +38,10 @@ export class Controller {
     );
   };
 
-  handleViewMemeChange(id) {
+  handleViewMemeChange = (id) => {
+    // console.log(id);
     this.model.setCurrentMemeId(id);
-  }
+  };
 
   handleModelCurrentMemeIdChange = () => {
     const preview = {

@@ -1,4 +1,5 @@
 const PREVIEW_MOCK = {
+  // url: "",
   textTop: "text above",
   textBottom: "text under",
 };
@@ -43,7 +44,7 @@ export class Model {
     let currentMeme = null;
 
     this.memes.forEach((meme) => {
-      console.log(this.getCurrentMemeId());
+      // console.log(this.getCurrentMemeId());
       if (meme.id === this.getCurrentMemeId()) {
         currentMeme = meme;
       }

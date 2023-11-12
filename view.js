@@ -32,4 +32,10 @@ export class View {
       this.memesSelectNode.appendChild(optionNode);
     });
   }
+
+  _handleSelectChange = () => {
+    const id = this.memesSelectNode.value;
+    // console.log(this.memesSelectNode.value);
+    this.onMemeChange(id);
+  };
 }
