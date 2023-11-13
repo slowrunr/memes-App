@@ -20,10 +20,7 @@ export class Controller {
 
     this.model.setMemes(memes);
 
-    this.model.setCurrentMemeId(memes[0].id);
-
-    // const preview = this.model.getPreview();
-    // this.view.renderPreview(preview);
+    // this.model.setCurrentMemeId(memes[0].id);
   }
 
   handleModelMemesChange = () => {
@@ -39,6 +36,11 @@ export class Controller {
   };
 
   handleModelCurrentMemeIdChange = () => {
+    const url = this.model.getCurrentMeme().url;
+    if (!url) {
+      return;
+    }
+
     const preview = {
       ...this.model.getPreview(),
       url: this.model.getCurrentMeme().url,

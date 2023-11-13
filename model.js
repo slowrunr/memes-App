@@ -22,7 +22,7 @@ export class Model {
     this.memes = memes;
     this.currentMemeId = memes[0].id;
 
-    this.onMemesChange();
+    this.onMemesChange(this.memes);
     this.onCurrentMemeIdChange();
   }
 
@@ -51,6 +51,5 @@ export class Model {
     });
 
     return currentMeme;
-    // return this.memes[this.getCurrentMemeId];
   }
 }
