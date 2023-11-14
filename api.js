@@ -26,11 +26,10 @@ const MEMES_MOCK = [
 
 export class API {
   constructor() {
-    this.baseURL = "https://jsonplaceholder.typicode.com";
+    this.baseURL = "https://api.imgflip.com";
   }
 
   getMemes() {
-    // console.log(MEMES_MOCK);
-    return MEMES_MOCK;
+    return fetch(`${this.baseURL}/get_memes`).then((data) => data.json());
   }
 }

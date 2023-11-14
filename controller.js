@@ -22,11 +22,10 @@ export class Controller {
   }
 
   init() {
-    const memes = this.api.getMemes();
-
-    this.model.setMemes(memes);
-
-    // this.model.setCurrentMemeId(memes[0].id);
+    this.api.getMemes().then((data) => {
+      const memes = data.data.memes;
+      this.model.setMemes(memes);
+    });
   }
 
   handleModelMemesChange = () => {
