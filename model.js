@@ -1,19 +1,19 @@
-const PREVIEW_MOCK = {
-  // url: "",
-  textTop: "text above",
-  textBottom: "text under",
-};
-
 export class Model {
-  constructor({ onCurrentMemeIdChange, onMemesChange }) {
+  constructor({
+    onCurrentMemeIdChange,
+    onMemesChange,
+    onTextTopChange,
+    onTextBottomChange,
+  }) {
     this.memes = [];
-    // this.preview = PREVIEW_MOCK;
+    this.currentMemeId = null;
     this.textTop = "";
     this.textBottom = "";
-    this.currentMemeId = null;
 
     this.onMemesChange = onMemesChange;
     this.onCurrentMemeIdChange = onCurrentMemeIdChange;
+    this.onTextTopChange = onTextTopChange;
+    this.onTextBottomChange = onTextBottomChange;
   }
 
   getMemes() {
@@ -36,6 +36,18 @@ export class Model {
 
   getCurrentMemeId() {
     return this.currentMemeId;
+  }
+
+  setTextTop(text) {
+    this.textTop = text;
+
+    this.onTextTopChange();
+  }
+
+  setTextBottom(text) {
+    this.textBottom = text;
+
+    this.onTextBottomChange();
   }
 
   getPreview = () => {

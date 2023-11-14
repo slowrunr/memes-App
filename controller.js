@@ -9,8 +9,14 @@ export class Controller {
     this.model = new Model({
       onMemesChange: this.handleModelMemesChange,
       onCurrentMemeIdChange: this.handleModelCurrentMemeIdChange,
+      onTextTopChange: this.handleModelTextTopChange,
+      onTextBottomChange: this.handleModelTextBottomChange,
     });
-    this.view = new View({ onMemeChange: this.handleViewMemeChange });
+    this.view = new View({
+      onMemeChange: this.handleViewMemeChange,
+      onTextTopChange: this.handleViewTextTopChange,
+      onTextBottomChange: this.handleViewTextBottomChange,
+    });
 
     this.api = new API();
   }
@@ -36,16 +42,34 @@ export class Controller {
   };
 
   handleModelCurrentMemeIdChange = () => {
-    const url = this.model.getCurrentMeme().url;
-    if (!url) {
-      return;
-    }
+    // const url = this.model.getCurrentMeme().url;
+    // if (!url) {
+    //   return;
+    // }
 
-    const preview = {
-      ...this.model.getPreview(),
-      url: this.model.getCurrentMeme().url,
-    };
+    // const preview = {
+    //   ...this.model.getPreview(),
+    //   url: this.model.getCurrentMeme().url,
+    // };
 
+    this.view.renderPreview(this.model.getPreview());
+  };
+
+  handleViewTextTopChange = (text) => {
+    console.log(text);
+    this.model.setTextTop(text);
+  };
+
+  handleViewTextBottomChange = (text) => {
+    console.log(text);
+    this.model.setTextBottom(text);
+  };
+
+  handleModelTextTopChange = () => {
+    this.view.renderPreview(this.model.getPreview());
+  };
+
+  handleModelTextBottomChange = () => {
     this.view.renderPreview(this.model.getPreview());
   };
 }
