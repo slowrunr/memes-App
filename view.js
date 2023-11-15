@@ -55,3 +55,20 @@ export class View {
     this.onTextBottomChange(event.target.value);
   };
 }
+
+// function shuffle(arrParam: any[]): any[]{
+//   let arr = arrParam.slice(),
+//       length = arr.length,
+//       temp,
+//       i;
+
+//   while(length){
+//       i = Math.floor(Math.random() * length--);
+
+//       temp = arr[length];
+//       arr[length] = arr[i];
+//       arr[i] = temp;
+//   }
+
+//   return arr;
+// }

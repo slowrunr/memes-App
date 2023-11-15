@@ -24,6 +24,9 @@ export class Controller {
   init() {
     this.api.getMemes().then((data) => {
       const memes = data.data.memes;
+      const MEMES_MAX_NUMBER = 99;
+      memes.length = MEMES_MAX_NUMBER;
+      console.log(memes.length);
       this.model.setMemes(memes);
     });
   }
@@ -41,16 +44,6 @@ export class Controller {
   };
 
   handleModelCurrentMemeIdChange = () => {
-    // const url = this.model.getCurrentMeme().url;
-    // if (!url) {
-    //   return;
-    // }
-
-    // const preview = {
-    //   ...this.model.getPreview(),
-    //   url: this.model.getCurrentMeme().url,
-    // };
-
     this.view.renderPreview(this.model.getPreview());
   };
 

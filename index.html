@@ -11,33 +11,52 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       rel="stylesheet"
     />
-
     <!-- <link rel="icon" href="favicon.jpg" /> -->
-    <title>MEME5app</title>
+    <title>MEME$app</title>
   </head>
   <body>
     <div class="container">
-      <div class="input-data">
-        <h1>Настройки:</h1>
+      <div class="input__data">
+        <h1>Settings:</h1>
         <div class="option__wrapper">
-          <p>Мем</p>
-          <select id="memesSelect" class="memes-select"></select>
+          <p class="input__title">Meme</p>
+          <select id="memesSelect" class="memes__select">
+            Choose an image
+          </select>
         </div>
         <div class="option__wrapper">
-          <label for="textTop">Текст сверху</label>
-          <input id="textTop" type="text" />
+          <label for="textTop">Top text</label>
+          <input
+            id="textTop"
+            type="text"
+            minlength="1"
+            maxlength="140"
+            autocomplete="off"
+            placeholder="Add your text here"
+          />
         </div>
         <div class="option__wrapper">
-          <label for="textBottom">Текст снизу</label>
-          <input id="textBottom" type="text" />
+          <label for="textBottom">Bottom text</label>
+          <input
+            id="textBottom"
+            type="text"
+            minlength="1"
+            maxlength="140"
+            autocomplete="off"
+            placeholder="Add your text here"
+          />
         </div>
       </div>
-      <div class="output-data">
-        <h2 class="output__title">Превью:</h2>
-        <div id="memesPreview" class="memes__preview">
-          <!-- <p id="textTop" class="inscription"></p>
-          <p id="textBottom" class="inscription"></p> -->
-          <img id="previewImage" class="base__image" />
+      <div class="output__data">
+        <h2 class="output__title">Preview:</h2>
+        <div id="memesPreviewContainer" class="memes__preview-container">
+          <p id="top-text" class="top-text"></p>
+          <img
+            id="memesPreview"
+            class="memes__preview"
+            alt="Here you can see a meme peview"
+          />
+          <p id="bottom-text" class="bottom-text"></p>
         </div>
       </div>
     </div>

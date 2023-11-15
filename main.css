@@ -1,16 +1,17 @@
 body {
   width: 100%;
+  margin: 0 auto;
   font-family: "Montserrat", sans-serif;
   background: rgba(255, 255, 255, 1);
   color: rgba(0, 0, 0, 1);
 }
 
 .container {
+  width: 1150px;
   margin: auto;
-  padding-top: 105px;
-  width: 1183px;
+  padding: 150px 0;
   display: flex;
-  gap: 222px;
+  justify-content: space-around;
 }
 
 h1,
@@ -45,10 +46,25 @@ input::placeholder {
   line-height: 30px;
   letter-spacing: 0em;
   text-align: left;
-  color: rgba(0, 0, 0, 1);
+  color: rgba(0, 0, 0, 0.9);
 }
 
-.memes-select,
+.memes__select {
+  appearance: none;
+  padding: 12px 21px;
+  margin-bottom: 42px;
+  width: 393px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  border: 1px solid #000;
+  background: #fff;
+  background-image: url(images/dropdown-arrow.png);
+  background-size: 45px 32px;
+  background-repeat: no-repeat;
+  background-position: right 0.7em top 50%, 0 0;
+}
+
 label {
   margin-bottom: 13px;
   font-size: 35px;
@@ -56,14 +72,6 @@ label {
   line-height: 43px;
   letter-spacing: 0em;
   text-align: left;
-}
-
-.input-data {
-  width: 393px;
-}
-
-.output-data {
-  width: 568px;
 }
 
 .output__img {
