@@ -6,6 +6,9 @@ export class View {
     this.memesSelectNode = document.getElementById("memesSelect");
     this.textTopInputNode = document.getElementById("textTop");
     this.textBottomInputNode = document.getElementById("textBottom");
+    this.previewTextTopNode = document.getElementById("previewTextTop");
+    this.previewTextBottomNode = document.getElementById("previewTextBottom");
+    this.deleteTextButtonNode = document.getElementById("deleteTextButton");
     this.onMemeChange = onMemeChange;
     this.onTextTopChange = onTextTopChange;
     this.onTextBottomChange = onTextBottomChange;
@@ -16,6 +19,7 @@ export class View {
       "change",
       this._handleTextBottomChange
     );
+    this.deleteTextButtonNode.addEventListener("click", this._deleteText);
   }
 
   renderPreview(preview) {
@@ -53,6 +57,11 @@ export class View {
   };
   _handleTextBottomChange = (event) => {
     this.onTextBottomChange(event.target.value);
+  };
+
+  _deleteText = () => {
+    this.textTopInputNode.value = "";
+    this.textBottomInputNode.value = "";
   };
 }
 

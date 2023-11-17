@@ -21,42 +21,48 @@
         <div class="option__wrapper">
           <p class="input__title">Meme</p>
           <select id="memesSelect" class="memes__select">
-            Choose an image
+            <option value="">Choose an image</option>
           </select>
         </div>
         <div class="option__wrapper">
           <label for="textTop">Top text</label>
-          <input
+          <textarea
             id="textTop"
+            class="text__input"
             type="text"
             minlength="1"
             maxlength="140"
             autocomplete="off"
             placeholder="Add your text here"
-          />
+          ></textarea>
         </div>
         <div class="option__wrapper">
           <label for="textBottom">Bottom text</label>
-          <input
+          <textarea
             id="textBottom"
+            class="text__input"
             type="text"
             minlength="1"
             maxlength="140"
             autocomplete="off"
             placeholder="Add your text here"
-          />
+          ></textarea>
         </div>
+        <button id="deleteTextButton" class="delete__text-button">
+          Delete text
+        </button>
       </div>
       <div class="output__data">
-        <h2 class="output__title">Preview:</h2>
+        <h2 class="output__title">Meme preview:</h2>
         <div id="memesPreviewContainer" class="memes__preview-container">
-          <p id="top-text" class="top-text"></p>
+          <p id="previewTextTop" class="text__top"></p>
           <img
-            id="memesPreview"
-            class="memes__preview"
+            id="previewImage"
+            class="preview__image"
+            src=""
             alt="Here you can see a meme peview"
           />
-          <p id="bottom-text" class="bottom-text"></p>
+          <p id="previewTextBottom" class="text__bottom"></p>
         </div>
       </div>
     </div>
