@@ -1,12 +1,25 @@
 export class View {
-  constructor({ onMemeChange }) {
+  constructor({ onMemeChange, onTextTopChange, onTextBottomChange }) {
     this.previewTextTopNode = document.getElementById("textTop");
     this.previewTextBottomNode = document.getElementById("textBottom");
     this.previewImageNode = document.getElementById("previewImage");
     this.memesSelectNode = document.getElementById("memesSelect");
+    this.textTopInputNode = document.getElementById("textTop");
+    this.textBottomInputNode = document.getElementById("textBottom");
+    this.previewTextTopNode = document.getElementById("previewTextTop");
+    this.previewTextBottomNode = document.getElementById("previewTextBottom");
+    this.deleteTextButtonNode = document.getElementById("deleteTextButton");
     this.onMemeChange = onMemeChange;
+    this.onTextTopChange = onTextTopChange;
+    this.onTextBottomChange = onTextBottomChange;
 
     this.memesSelectNode.addEventListener("change", this._handleSelectChange);
+    this.textTopInputNode.addEventListener("input", this._handleTextTopChange);
+    this.textBottomInputNode.addEventListener(
+      "input",
+      this._handleTextBottomChange
+    );
+    this.deleteTextButtonNode.addEventListener("click", this._deleteText);
   }
 
   renderPreview(preview) {
@@ -38,4 +51,34 @@ export class View {
     // console.log(this.memesSelectNode.value);
     this.onMemeChange(id);
   };
+
+  _handleTextTopChange = (event) => {
+    this.onTextTopChange(event.target.value);
+  };
+  _handleTextBottomChange = (event) => {
+    this.onTextBottomChange(event.target.value);
+  };
+
+  _deleteText = () => {
+    this.textTopInputNode.value = "";
+    this.textBottomInputNode.value = "";
+    this.textTopInputNode.focus();
+  };
 }
+
+// function shuffle(arrParam: any[]): any[]{
+//   let arr = arrParam.slice(),
+//       length = arr.length,
+//       temp,
+//       i;
+
+//   while(length){
+//       i = Math.floor(Math.random() * length--);
+
+//       temp = arr[length];
+//       arr[length] = arr[i];
+//       arr[i] = temp;
+//   }
+
+//   return arr;
+// }

@@ -9,26 +9,26 @@ export class Controller {
     this.model = new Model({
       onMemesChange: this.handleModelMemesChange,
       onCurrentMemeIdChange: this.handleModelCurrentMemeIdChange,
+      onTextTopChange: this.handleModelTextTopChange,
+      onTextBottomChange: this.handleModelTextBottomChange,
     });
-    this.view = new View({ onMemeChange: this.handleViewMemeChange });
+    this.view = new View({
+      onMemeChange: this.handleViewMemeChange,
+      onTextTopChange: this.handleViewTextTopChange,
+      onTextBottomChange: this.handleViewTextBottomChange,
+    });
 
     this.api = new API();
   }
 
   init() {
-    const memes = this.api.getMemes();
-
-    this.model.setMemes(memes);
-
-    this.model.setCurrentMemeId(memes[0].id);
-
-    // this.view.renderMemesSelect(
-    //   this.model.getMemes(),
-    //   this.model.getCurrentMemeId()
-    // );
-
-    // const preview = this.model.getPreview();
-    // this.view.renderPreview(preview);
+    this.api.getMemes().then((data) => {
+      const memes = data.data.memes;
+      const MEMES_MAX_NUMBER = 99;
+      memes.length = MEMES_MAX_NUMBER;
+      console.log(memes.length);
+      this.model.setMemes(memes);
+    });
   }
 
   handleModelMemesChange = () => {
@@ -44,11 +44,24 @@ export class Controller {
   };
 
   handleModelCurrentMemeIdChange = () => {
-    const preview = {
-      ...this.model.getPreview(),
-      url: this.model.getCurrentMeme().url,
-    };
+    this.view.renderPreview(this.model.getPreview());
+  };
 
-    this.view.renderPreview(preview);
+  handleViewTextTopChange = (text) => {
+    console.log(text);
+    this.model.setTextTop(text);
+  };
+
+  handleViewTextBottomChange = (text) => {
+    console.log(text);
+    this.model.setTextBottom(text);
+  };
+
+  handleModelTextTopChange = () => {
+    this.view.renderPreview(this.model.getPreview());
+  };
+
+  handleModelTextBottomChange = () => {
+    this.view.renderPreview(this.model.getPreview());
   };
 }

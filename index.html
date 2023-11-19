@@ -11,33 +11,58 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       rel="stylesheet"
     />
-
     <!-- <link rel="icon" href="favicon.jpg" /> -->
-    <title>MEME5app</title>
+    <title>MEME$app</title>
   </head>
   <body>
     <div class="container">
-      <div class="input-data">
-        <h1>Настройки:</h1>
+      <div class="input__data">
+        <h1>Settings:</h1>
         <div class="option__wrapper">
-          <p>Мем</p>
-          <select id="memesSelect" class="memes-select"></select>
+          <p class="input__title">Meme</p>
+          <select id="memesSelect" class="memes__select">
+            <option value="">Choose an image</option>
+          </select>
         </div>
         <div class="option__wrapper">
-          <label for="textTop">Текст сверху</label>
-          <input id="textTop" type="text" placeholder="Нельзя просто так" />
+          <label for="textTop">Top text</label>
+          <textarea
+            id="textTop"
+            class="text__input"
+            type="text"
+            minlength="1"
+            maxlength="140"
+            autocomplete="off"
+            placeholder="Add your text here"
+          ></textarea>
         </div>
         <div class="option__wrapper">
-          <label for="textBottom">Текст снизу</label>
-          <input id="textBottom" type="text" placeholder="Взять и..." />
+          <label for="textBottom">Bottom text</label>
+          <textarea
+            id="textBottom"
+            class="text__input"
+            type="text"
+            minlength="1"
+            maxlength="140"
+            autocomplete="off"
+            placeholder="Add your text here"
+          ></textarea>
         </div>
+        <button id="deleteTextButton" class="delete__text-button">
+          Delete text
+        </button>
       </div>
-      <div class="output-data">
-        <h2 class="output__title">Превью:</h2>
-        <div id="memesPreview" class="memes__preview">
-          <p id="textTop" class="inscription"></p>
-          <p id="textBottom" class="inscription"></p>
-          <img id="previewImage" class="base__image" />
+      <div class="output__data">
+        <h2 class="output__title">Meme preview:</h2>
+        <div id="memesPreviewContainer" class="memes__preview-container">
+          <p id="previewTextTop" class="text__top"></p>
+          <img
+            id="previewImage"
+            class="preview__image"
+            src=""
+            alt="Here you can see a meme peview"
+          />
+          <p id="previewTextBottom" class="text__bottom"></p>
         </div>
       </div>
     </div>
