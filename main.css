@@ -9,42 +9,9 @@ body {
 .container {
   width: 1150px;
   margin: auto;
-  padding: 150px 0;
+  padding: 15px 0;
   display: flex;
   justify-content: space-around;
-}
-
-@media (max-width: 1199px) {
-  .container {
-    margin-bottom: 100px;
-    padding-top: 100px;
-    width: 100%;
-  }
-}
-@media (max-width: 999px) {
-  .container {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 90px;
-    padding-top: 100px;
-  }
-}
-@media (max-width: 767px) {
-  .container {
-    padding: 0 12px;
-    margin-bottom: 80px;
-    padding-top: 80px;
-  }
-  .input__data {
-    width: 100%;
-  }
-  .output__data {
-    width: 100%;
-  }
-  .memes__preview-container {
-    width: 100%;
-  }
 }
 
 h1,
@@ -54,11 +21,21 @@ h2 {
   font-weight: 700;
   line-height: 61px;
   letter-spacing: 0em;
-  text-align: left;
+  text-align: center;
 }
 
 .option__wrapper {
   margin-bottom: 42px;
+}
+
+.input__title,
+label {
+  margin-bottom: 13px;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 43px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .text__input {
@@ -85,7 +62,7 @@ h2 {
 
 .memes__select {
   width: 432px;
-  /* appearance: none; */
+  appearance: none;
   padding: 12px 21px;
   overflow: none;
   font: inherit;
@@ -95,20 +72,10 @@ h2 {
   border-radius: 15px;
   border: 1px solid #000;
   background: #fff;
-  /* background-image: url(images/dropdown-arrow.png);
-  background-size: 45px 32px;
+  background-image: url(images/dropdown-arrow.png);
+  background-size: 35px 22px;
   background-repeat: no-repeat;
-  background-position: right 0.7em top 50%, 0 0; */
-}
-
-.input__title,
-label {
-  margin-bottom: 13px;
-  font-size: 35px;
-  font-weight: 400;
-  line-height: 43px;
-  letter-spacing: 0em;
-  text-align: left;
+  background-position: right 0.7em top 50%, 0 0;
 }
 
 .preview__image {
@@ -121,32 +88,35 @@ label {
 
 .memes__preview-container {
   position: relative;
-
   margin: 0 auto;
 }
+
 .text__top,
 .text__bottom {
-  display: block;
   position: absolute;
+  width: 210px;
+  height: 90px;
+  display: block;
   color: #fff;
   font-size: 35px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  /* border: 1px solid red; */
+  word-break: break-all;
 }
 
 .text__top {
   top: 22px;
-  left: 25%;
 }
 
 .text__bottom {
-  bottom: 30px;
-  left: 8%;
+  bottom: 40px;
 }
 
 .output__title {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 .delete__text-button {
@@ -154,7 +124,7 @@ label {
   height: 54px;
   border: 1px solid black;
   border-radius: 15px;
-  background-color: red;
+  background-color: rgb(201, 107, 19);
   color: white;
   font-size: 30px;
   cursor: pointer;

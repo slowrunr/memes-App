@@ -14,9 +14,9 @@ export class View {
     this.onTextBottomChange = onTextBottomChange;
 
     this.memesSelectNode.addEventListener("change", this._handleSelectChange);
-    this.textTopInputNode.addEventListener("change", this._handleTextTopChange);
+    this.textTopInputNode.addEventListener("input", this._handleTextTopChange);
     this.textBottomInputNode.addEventListener(
-      "change",
+      "input",
       this._handleTextBottomChange
     );
     this.deleteTextButtonNode.addEventListener("click", this._deleteText);
@@ -62,6 +62,7 @@ export class View {
   _deleteText = () => {
     this.textTopInputNode.value = "";
     this.textBottomInputNode.value = "";
+    this.textTopInputNode.focus();
   };
 }
 

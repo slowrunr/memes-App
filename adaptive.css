@@ -1,0 +1,84 @@
+/* layot for tablets */
+@media (max-width: 1199px) {
+  .container {
+    margin-bottom: 100px;
+    padding-top: 10px;
+    width: 100%;
+  }
+
+  h1,
+  h2 {
+    margin-bottom: 35px;
+    font-size: 35px;
+  }
+
+  .option__wrapper {
+    margin-bottom: 35px;
+  }
+
+  .input__title,
+  label {
+    margin-bottom: 10px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 999px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 90px;
+  }
+
+  .delete__text-button {
+    margin-bottom: 25px;
+  }
+}
+
+/* layout for mobiles */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 12px;
+    margin-bottom: 80px;
+    padding-top: 80px;
+  }
+
+  .input__data,
+  .output__data,
+  .memes__preview-container {
+    width: 100%;
+  }
+
+  h1,
+  h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+  }
+
+  .option__wrapper {
+    margin-bottom: 25px;
+  }
+
+  .input__title,
+  label {
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+
+  .memes-select,
+  .preview__image {
+    width: 100%;
+  }
+
+  .text__top,
+  .text__bottom {
+    left: 90px;
+    font-size: 28px;
+  }
+
+  .delete__text-button {
+    width: 100%;
+    margin-bottom: 28px;
+  }
+}
