@@ -1,3 +1,8 @@
+const DEFAULT_MEME = {
+  url: "https://i.imgflip.com/1bij.jpg",
+  textTop: "text on top",
+  textBottom: "text below",
+};
 export class Model {
   constructor({
     onCurrentMemeIdChange,
@@ -5,6 +10,7 @@ export class Model {
     onTextTopChange,
     onTextBottomChange,
   }) {
+    this.preview = DEFAULT_MEME;
     this.memes = [];
     this.currentMemeId = null;
     this.textTop = "";
@@ -14,6 +20,9 @@ export class Model {
     this.onCurrentMemeIdChange = onCurrentMemeIdChange;
     this.onTextTopChange = onTextTopChange;
     this.onTextBottomChange = onTextBottomChange;
+  }
+  getDefaultMeme() {
+    return this.preview;
   }
 
   getMemes() {
@@ -60,7 +69,6 @@ export class Model {
 
   getCurrentMeme() {
     let currentMeme = null;
-
     this.memes.forEach((meme) => {
       // console.log(this.getCurrentMemeId());
       if (meme.id === this.getCurrentMemeId()) {

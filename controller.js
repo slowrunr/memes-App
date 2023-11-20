@@ -22,14 +22,31 @@ export class Controller {
   }
 
   init() {
+    this.handleDefaultMemeRender();
+
+    // this.api.getMemes().then((data) => {
+    //   const memes = data.data.memes;
+    //   const MEMES_MAX_NUMBER = 99;
+    //   memes.length = MEMES_MAX_NUMBER;
+    //   console.log(memes.length);
+    //   this.model.setMemes(memes);
+    // });
+  }
+
+  handleDefaultMemeRender = () => {
+    const preview = this.model.getDefaultMeme();
+    this.view.renderPreview(preview);
+  };
+
+  handleMemesFromAPI = () => {
     this.api.getMemes().then((data) => {
       const memes = data.data.memes;
       const MEMES_MAX_NUMBER = 99;
       memes.length = MEMES_MAX_NUMBER;
-      console.log(memes.length);
+
       this.model.setMemes(memes);
     });
-  }
+  };
 
   handleModelMemesChange = () => {
     this.view.renderMemesSelect(
