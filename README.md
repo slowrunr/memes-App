@@ -1,5 +1,5 @@
 # memesApp
-https://slowrunr.github.io/meme$App/
+https://slowrunr.github.io/memes-App/
 
 Hi fellas!!! Pls feel free to review this code. It's my 7. js project. All comments are highly appreciated on https://t.me/s_mungalov.
 
