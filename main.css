@@ -107,7 +107,7 @@ label {
   font-weight: 400;
   line-height: normal;
   /* border: 1px solid red; */
-  word-break: break-all;
+  /* word-break: break-all; */
 }
 
 .text__top {

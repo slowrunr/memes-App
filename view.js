@@ -62,6 +62,7 @@ export class View {
   _deleteText = () => {
     this.textTopInputNode.value = "";
     this.textBottomInputNode.value = "";
+
     this.textTopInputNode.focus();
   };
 }
