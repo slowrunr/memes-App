@@ -69,7 +69,6 @@ export class Model {
 
   getCurrentMeme() {
     let currentMeme = null;
-    // console.log(DEFAULT_MEME);
     this.memes.forEach((meme) => {
       // console.log(this.getCurrentMemeId());
       if (meme.id === this.getCurrentMemeId()) {

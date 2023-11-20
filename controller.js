@@ -7,7 +7,6 @@ import { API } from "./api.js";
 export class Controller {
   constructor() {
     this.model = new Model({
-      defaultMemePreview: this.handleDefaultMemeRender,
       onMemesChange: this.handleModelMemesChange,
       onCurrentMemeIdChange: this.handleModelCurrentMemeIdChange,
       onTextTopChange: this.handleModelTextTopChange,
@@ -24,18 +23,29 @@ export class Controller {
 
   init() {
     this.handleDefaultMemeRender();
-    this.api.getMemes().then((data) => {
-      const memes = data.data.memes;
-      const MEMES_MAX_NUMBER = 99;
-      memes.length = MEMES_MAX_NUMBER;
-      console.log(memes.length);
-      this.model.setMemes(memes);
-    });
+
+    // this.api.getMemes().then((data) => {
+    //   const memes = data.data.memes;
+    //   const MEMES_MAX_NUMBER = 99;
+    //   memes.length = MEMES_MAX_NUMBER;
+    //   console.log(memes.length);
+    //   this.model.setMemes(memes);
+    // });
   }
 
   handleDefaultMemeRender = () => {
     const preview = this.model.getDefaultMeme();
     this.view.renderPreview(preview);
+  };
+
+  handleMemesFromAPI = () => {
+    this.api.getMemes().then((data) => {
+      const memes = data.data.memes;
+      const MEMES_MAX_NUMBER = 99;
+      memes.length = MEMES_MAX_NUMBER;
+
+      this.model.setMemes(memes);
+    });
   };
 
   handleModelMemesChange = () => {

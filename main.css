@@ -82,7 +82,7 @@ label {
   width: 568px;
   height: 568px;
   border-radius: 25px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -94,6 +94,10 @@ label {
 .text__top,
 .text__bottom {
   position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   width: 210px;
   height: 90px;
   display: block;
@@ -111,7 +115,7 @@ label {
 }
 
 .text__bottom {
-  bottom: 40px;
+  bottom: 30px;
 }
 
 .output__title {
