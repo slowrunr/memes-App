@@ -22,15 +22,9 @@ export class Controller {
   }
 
   init() {
-    this.handleDefaultMemeRender();
+    // this.handleDefaultMemeRender();
 
-    // this.api.getMemes().then((data) => {
-    //   const memes = data.data.memes;
-    //   const MEMES_MAX_NUMBER = 99;
-    //   memes.length = MEMES_MAX_NUMBER;
-    //   console.log(memes.length);
-    //   this.model.setMemes(memes);
-    // });
+    this.handleMemesFromAPI();
   }
 
   handleDefaultMemeRender = () => {
@@ -65,12 +59,12 @@ export class Controller {
   };
 
   handleViewTextTopChange = (text) => {
-    console.log(text);
+    // console.log(text);
     this.model.setTextTop(text);
   };
 
   handleViewTextBottomChange = (text) => {
-    console.log(text);
+    // console.log(text);
     this.model.setTextBottom(text);
   };
 
